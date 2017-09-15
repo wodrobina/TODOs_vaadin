@@ -21,6 +21,6 @@ public class TodoLayout extends VerticalLayout {
 
     private void setTodos(List<Todo> todos) {
         removeAllComponents();
-        todos.forEach(todo -> new TodoItemLayout(todo));
+        todos.forEach(todo -> addComponent(new TodoItemLayout(todo)));
     }
 }
