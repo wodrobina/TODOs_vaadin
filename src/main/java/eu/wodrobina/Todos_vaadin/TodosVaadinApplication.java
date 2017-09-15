@@ -8,5 +8,6 @@ public class TodosVaadinApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TodosVaadinApplication.class, args);
+
 	}
 }

@@ -33,6 +33,7 @@ public class TodoUI extends UI {
         HorizontalLayout formLayout = new HorizontalLayout();
         TextField task = new TextField();
         Button add = new Button("Add");
+        add.addListener(lisn ->root.addComponent(new Label("click")));
 
         formLayout.addComponents(task, add);
 
