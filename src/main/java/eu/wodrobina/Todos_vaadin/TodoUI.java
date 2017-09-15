@@ -1,5 +1,6 @@
 package eu.wodrobina.Todos_vaadin;
 
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
@@ -37,10 +38,13 @@ public class TodoUI extends UI {
         HorizontalLayout formLayout = new HorizontalLayout();
         formLayout.setWidth("80%");
         TextField task = new TextField();
-        Button add = new Button("Add");
-        add.addListener(lisn ->root.addComponent(new Label("click")));
 
-        formLayout.addComponents(task, add);
+        Button add = new Button();
+        add.addStyleName(ValoTheme.BUTTON_PRIMARY);
+        add.setIcon(VaadinIcons.PLUS);
+
+        formLayout.addComponentsAndExpand(task);
+        formLayout.addComponents(add);
 
         root.addComponent(formLayout);
     }
