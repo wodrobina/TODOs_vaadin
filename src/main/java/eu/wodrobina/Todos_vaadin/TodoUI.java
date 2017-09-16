@@ -1,5 +1,6 @@
 package eu.wodrobina.Todos_vaadin;
 
+import com.vaadin.event.ShortcutAction;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
@@ -48,6 +49,8 @@ public class TodoUI extends UI {
                 task.clear();
                 task.focus();
         });
+        task.focus();
+        add.setClickShortcut(ShortcutAction.KeyCode.ENTER);
 
         formLayout.addComponentsAndExpand(task);
         formLayout.addComponents(add);
