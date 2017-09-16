@@ -16,11 +16,20 @@ public class TodoLayout extends VerticalLayout {
 
     @PostConstruct
     void init(){
+        update();
+    }
+
+    private void update() {
         setTodos(repo.findAll());
     }
 
     private void setTodos(List<Todo> todos) {
         removeAllComponents();
         todos.forEach(todo -> addComponent(new TodoItemLayout(todo)));
+    }
+
+    public void add(Todo todo) {
+        repo.save(todo);
+        update();
     }
 }

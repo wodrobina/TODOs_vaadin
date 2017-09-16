@@ -43,6 +43,12 @@ public class TodoUI extends UI {
         add.addStyleName(ValoTheme.BUTTON_PRIMARY);
         add.setIcon(VaadinIcons.PLUS);
 
+        add.addListener(click->{
+                todoLayout.add(new Todo(task.getValue()));
+                task.clear();
+                task.focus();
+        });
+
         formLayout.addComponentsAndExpand(task);
         formLayout.addComponents(add);
 
