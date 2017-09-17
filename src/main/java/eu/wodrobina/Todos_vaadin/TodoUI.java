@@ -8,6 +8,8 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.swing.*;
+
 @SpringUI
 public class TodoUI extends UI {
 
@@ -62,6 +64,8 @@ public class TodoUI extends UI {
         root.addComponent(todoLayout);
     }
     private void addDeleteButton() {
-        root.addComponent(new Button("Delete completed"));
+        root.addComponent(new Button(
+                "Delete completed TODOs",
+                event -> todoLayout.deleteCompleted()));
     }
 }
