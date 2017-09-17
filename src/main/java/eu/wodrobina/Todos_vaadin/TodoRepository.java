@@ -1,7 +1,8 @@
 package eu.wodrobina.Todos_vaadin;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.transaction.Transactional;
 
 public interface TodoRepository extends JpaRepository<Todo, Long>{
 
